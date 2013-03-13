@@ -170,7 +170,7 @@ class CjwNewsletterMailComposer extends ezcMail
         $this->properties['plainText'] = null;
         $this->properties['htmlText'] = null;
         $this->properties['charset'] = 'us-ascii';
-        $this->properties['encoding'] = ezcMail::EIGHT_BIT;
+        $this->properties['encoding'] = ezcMail::BASE64;
         if ( $options === null )
         {
             $options = new ezcMailComposerOptions();
