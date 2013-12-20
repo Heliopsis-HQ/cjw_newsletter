@@ -43,7 +43,12 @@ foreach ( $sendObjectList as $sendObject )
         $cli->output( $message );
     }
 
-    $output = new ezcConsoleOutput();
+    $ezcOutputOptions = array();
+    if( $cli->isQuiet() )
+    {
+        $ezcOutputOptions = array( 'verbosityLevel' => 0 );
+    }
+    $output = new ezcConsoleOutput( null, $ezcOutputOptions );
     $editionSendId = (int) $sendObject->attribute('id');
     $sendItemsStatistic = $sendObject->attribute('send_items_statistic');
 
